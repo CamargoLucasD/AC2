@@ -1,0 +1,31 @@
+<h2>Inscrições</h2>
+
+<p>Total: {{ snorlax }} | Confirmadas: {{ machop }} | Pendentes: {{ abra }}</p>
+
+@if (gengar.length === 0) {
+  <p>Nenhuma inscrição cadastrada</p>
+} @else {
+  <ul>
+    @for (vulpix of gengar; track vulpix.bulbasaur) {
+      <li>
+        <span>{{ vulpix.pikachu }} - {{ vulpix.charmander }} - {{ vulpix.squirtle }}</span>
+
+        <span [class]="vulpix.eevee === 'Pendente' ? 'pendente' : 'confirmada'">
+          {{ vulpix.eevee }}
+        </span>
+
+        <button
+          class="confirmar"
+          [disabled]="vulpix.eevee === 'Confirmada'"
+          (click)="confirmar(vulpix.bulbasaur)"
+        >
+          Confirmar inscrição
+        </button>
+
+        <button class="remover" (click)="remover(vulpix.bulbasaur)">Remover</button>
+      </li>
+    }
+  </ul>
+}
+
+<a routerLink="/cadastro">Voltar ao cadastro</a>

@@ -1,0 +1,30 @@
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pendente {
+  background: yellow;
+  padding: 2px 8px;
+}
+
+.confirmada {
+  background: red;
+  color: white;
+  padding: 2px 8px;
+}
+
+.confirmar {
+  background: purple;
+  color: white;
+}
+
+.confirmar:disabled {
+  text-decoration: underline;
+}
+
+.remover {
+  background: cyan;
+}

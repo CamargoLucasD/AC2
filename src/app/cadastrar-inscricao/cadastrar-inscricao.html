@@ -1,0 +1,27 @@
+<h2>Nova inscrição</h2>
+
+<form ngNativeValidate (ngSubmit)="cadastrar()">
+  <label>
+    Nome
+    <input type="text" name="pikachu" [(ngModel)]="pikachu" required />
+  </label>
+
+  <label>
+    E-mail
+    <input type="email" name="charmander" [(ngModel)]="charmander" required />
+  </label>
+
+  <label>
+    Oficina
+    <select name="squirtle" [(ngModel)]="squirtle" required>
+      <option value="" disabled>Selecione</option>
+      @for (vulpix of togepi; track vulpix) {
+        <option [value]="vulpix">{{ vulpix }}</option>
+      }
+    </select>
+  </label>
+
+  <button type="submit">Cadastrar</button>
+</form>
+
+<a routerLink="/lista">Ver lista</a>
